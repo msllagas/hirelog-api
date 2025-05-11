@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\SignUpController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -14,3 +15,4 @@ Route::get('/hello', function () {
 
 // Auth-related routes
 Route::post('login', LoginController::class)->middleware('guest');
+Route::post('signup', SignupController::class)->middleware('guest');
