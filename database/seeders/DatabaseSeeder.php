@@ -21,7 +21,6 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $this->call([
-            CurrencySeeder::class,
             JobTypeSeeder::class,
             ApplicationStatusSeeder::class,
         ]);
