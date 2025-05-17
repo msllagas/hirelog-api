@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Job;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class EmploymentTypeController extends Controller
+class JobTypeController extends Controller
 {
     /**
      * Display a listing of the resource.

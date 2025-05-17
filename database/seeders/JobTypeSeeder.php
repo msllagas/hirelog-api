@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\EmploymentType;
+use App\Models\JobType;
 use Illuminate\Database\Seeder;
 
-class EmploymentTypeSeeder extends Seeder
+class JobTypeSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -22,7 +22,7 @@ class EmploymentTypeSeeder extends Seeder
         ];
 
         foreach ($types as $type) {
-            EmploymentType::create(['name' => $type]);
+            JobType::create(['name' => $type]);
         }
     }
 }

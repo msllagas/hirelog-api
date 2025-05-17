@@ -2,12 +2,12 @@
 
 namespace App\Models;
 
-use Database\Factories\EmploymentTypeFactory;
+use Database\Factories\JobTypeFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class EmploymentType extends Model
+class JobType extends Model
 {
-    /** @use HasFactory<EmploymentTypeFactory> */
+    /** @use HasFactory<JobTypeFactory> */
     use HasFactory;
 }

@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             CurrencySeeder::class,
-            EmploymentTypeSeeder::class,
+            JobTypeSeeder::class,
             ApplicationStatusSeeder::class,
         ]);
     }

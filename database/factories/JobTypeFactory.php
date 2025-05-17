@@ -2,13 +2,13 @@
 
 namespace Database\Factories;
 
-use App\Models\EmploymentType;
+use App\Models\JobType;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends Factory<EmploymentType>
+ * @extends Factory<JobType>
  */
-class EmploymentTypeFactory extends Factory
+class JobTypeFactory extends Factory
 {
     /**
      * Define the model's default state.
