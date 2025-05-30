@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             JobTypeSeeder::class,
             ApplicationStatusSeeder::class,
+            JobApplicationSeeder::class,
         ]);
     }
 }
