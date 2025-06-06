@@ -14,6 +14,9 @@ class JobTypeResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return [];
+        return [
+            'id' => $this->resource->id,
+            'name' => $this->resource->name,
+        ];
     }
 }
