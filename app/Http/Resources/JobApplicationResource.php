@@ -19,7 +19,6 @@ class JobApplicationResource extends JsonResource
             'company_name' => $this->company_name,
             'position' => $this->position,
             'location' => $this->location,
-            'salary' => $this->salary,
             'description' => $this->description,
             'application_url' => $this->application_url,
             'job_type' => new JobTypeResource($this->whenLoaded('jobType')),
