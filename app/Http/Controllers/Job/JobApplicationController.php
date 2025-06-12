@@ -20,6 +20,7 @@ class JobApplicationController extends Controller
      */
     public function index(): AnonymousResourceCollection
     {
+        // todo -> add check and return proper error response if Auth::id() is null
         $jobApplications = JobApplication::whereUserId(Auth::id())
             ->with(['jobType', 'applicationStatus'])
             ->orderBy('created_at', 'desc')
