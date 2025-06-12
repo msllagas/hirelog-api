@@ -23,7 +23,7 @@ class JobApplicationController extends Controller
         $jobApplications = JobApplication::whereUserId(Auth::id())
             ->with(['jobType', 'applicationStatus'])
             ->orderBy('created_at', 'desc')
-            ->paginate(10);
+            ->paginate(12);
 
         return JobApplicationResource::collection($jobApplications);
     }
