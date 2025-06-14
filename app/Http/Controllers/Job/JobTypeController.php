@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Job;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\JobTypeResource;
+use App\Models\JobType;
 use Illuminate\Http\Request;
 
 class JobTypeController extends Controller
@@ -12,7 +14,7 @@ class JobTypeController extends Controller
      */
     public function index()
     {
-        //
+        return JobTypeResource::collection(JobType::all());
     }
 
     /**
