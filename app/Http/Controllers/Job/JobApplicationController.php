@@ -22,7 +22,7 @@ class JobApplicationController extends Controller
     {
         // todo -> add check and return proper error response if Auth::id() is null
         $jobApplications = JobApplication::whereUserId(Auth::id())
-            ->with(['jobType', 'applicationStatus'])
+            ->with(['jobType', 'applicationStatus', 'savedJob'])
             ->orderBy('created_at', 'desc')
             ->paginate(12);
 
