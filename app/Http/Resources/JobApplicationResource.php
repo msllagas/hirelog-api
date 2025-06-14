@@ -23,6 +23,7 @@ class JobApplicationResource extends JsonResource
             'application_url' => $this->application_url,
             'job_type' => new JobTypeResource($this->whenLoaded('jobType')),
             'application_status' => new ApplicationStatusResource($this->whenLoaded('applicationStatus')),
+            'is_saved' => $this->savedJob !== null,
         ];
     }
 }
