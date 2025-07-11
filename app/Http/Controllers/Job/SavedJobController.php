@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreSavedJobRequest;
 use App\Http\Requests\UpdateSavedJobRequest;
 use App\Models\SavedJob;
+use Illuminate\Support\Facades\Auth;
 
 class SavedJobController extends Controller
 {
@@ -14,15 +15,8 @@ class SavedJobController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+        return SavedJob::whereUserId(Auth::id())
+            ->paginate(12);
     }
 
     /**
@@ -41,13 +35,6 @@ class SavedJobController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(SavedJob $savedJob)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
