@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\SignUpController;
 use App\Http\Controllers\Job\ApplicationStatusController;
 use App\Http\Controllers\Job\JobApplicationController;
 use App\Http\Controllers\Job\JobTypeController;
+use App\Http\Controllers\Job\SavedJobController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -27,5 +28,6 @@ Route::middleware('auth:sanctum')->group(function () {
         'job-applications' => JobApplicationController::class,
         'job-types' => JobTypeController::class,
         'application-statuses' => ApplicationStatusController::class,
+        'saved-jobs' => SavedJobController::class,
     ]);
 });
