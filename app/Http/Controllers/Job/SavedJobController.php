@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Job;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreSavedJobRequest;
 use App\Http\Requests\UpdateSavedJobRequest;
+use App\Models\JobApplication;
 use App\Models\SavedJob;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 
 class SavedJobController extends Controller
 {
@@ -25,6 +27,12 @@ class SavedJobController extends Controller
     public function store(StoreSavedJobRequest $request)
     {
         $savedJobData = $request->validated();
+
+        $jobApplicationId = $savedJobData['job_application_id'];
+
+        $jobApplication = JobApplication::find($jobApplicationId);
+
+        Gate::authorize('save-job', $jobApplication);
 
         return SavedJob::create(array_merge($savedJobData, ['user_id' => Auth::id()]));
 
