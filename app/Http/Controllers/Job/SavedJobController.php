@@ -24,7 +24,10 @@ class SavedJobController extends Controller
      */
     public function store(StoreSavedJobRequest $request)
     {
-        //
+        $savedJobData = $request->validated();
+
+        return SavedJob::create(array_merge($savedJobData, ['user_id' => Auth::id()]));
+
     }
 
     /**
@@ -34,7 +37,6 @@ class SavedJobController extends Controller
     {
         //
     }
-
 
     /**
      * Update the specified resource in storage.
