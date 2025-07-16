@@ -23,7 +23,6 @@ class StoreJobApplicationRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'user_id' => 'required|integer|numeric|exists:users,id',
             'company_name' => 'required|string|max:255',
             'job_type_id' => 'required|integer|numeric|exists:job_types,id',
             'position' => 'required|string|max:255',
@@ -32,13 +31,6 @@ class StoreJobApplicationRequest extends FormRequest
             'description' => 'nullable|string|max:255',
             //            'application_url' => 'required|string|max:255',
         ];
-    }
-
-    public function prepareForValidation(): void
-    {
-        $this->merge([
-            'user_id' => \Auth::id(),
-        ]);
     }
 
     public function attributes(): array
