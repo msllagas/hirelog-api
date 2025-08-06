@@ -21,10 +21,10 @@ return new class extends Migration
             $table->string('company_name');
             $table->string('position');
             $table->string('location', 50)->nullable();
-            //            $table->longText('description')->nullable();
+            $table->text('description')->nullable();
             $table->foreignIdFor(ApplicationStatus::class)->constrained()->cascadeOnDelete()->cascadeOnUpdate();
-            //            $table->string('application_url')->nullable();
-            //            $table->timestamp('applied_at');
+            $table->string('application_url')->nullable();
+            $table->date('applied_at');
             $table->timestamps();
             $table->softDeletes();
         });
