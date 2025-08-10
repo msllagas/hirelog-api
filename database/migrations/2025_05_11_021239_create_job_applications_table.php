@@ -17,14 +17,15 @@ return new class extends Migration
         Schema::create('job_applications', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->foreignIdFor(User::class)->constrained()->cascadeOnDelete()->cascadeOnUpdate();
-            $table->foreignIdFor(JobType::class)->constrained()->cascadeOnDelete()->cascadeOnUpdate();
-            $table->string('company_name');
             $table->string('position');
+            $table->string('company_name');
+            $table->date('applied_date')->nullable();
             $table->string('location', 50)->nullable();
-            $table->text('description')->nullable();
+            $table->foreignIdFor(JobType::class)->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignIdFor(ApplicationStatus::class)->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->string('application_url')->nullable();
-            $table->date('applied_at');
+            $table->text('description')->nullable();
+
             $table->timestamps();
             $table->softDeletes();
         });
