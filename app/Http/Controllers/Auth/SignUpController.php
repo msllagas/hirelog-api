@@ -3,15 +3,23 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Requests\Auth\SignUpRequest;
+use App\Models\User;
 
 class SignUpController extends Controller
 {
     /**
      * Handle the incoming request.
      */
-    public function __invoke(Request $request)
+    public function __invoke(SignUpRequest $request)
     {
-        return 'This is the sign up controller.';
+
+        $user = User::create($request->validated());
+
+        if (! $user) {
+            return response()->json(['message' => 'User creation failed'], 500);
+        }
+
+        return $user;
     }
 }
