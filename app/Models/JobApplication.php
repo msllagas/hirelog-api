@@ -79,6 +79,7 @@ class JobApplication extends Model
         'description',
         'application_url',
         'application_status_id',
+        'applied_date',
     ];
 
     public function jobType(): BelongsTo

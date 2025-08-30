@@ -29,7 +29,8 @@ class StoreJobApplicationRequest extends FormRequest
             'application_status_id' => 'required|integer|numeric|exists:application_statuses,id',
             'location' => 'nullable|string|max:50',
             'description' => 'nullable|string|max:255',
-            //            'application_url' => 'required|string|max:255',
+            'application_url' => 'required|string|max:255',
+            'applied_date' => 'nullable|date',
         ];
     }
 
